@@ -35,9 +35,10 @@ export default {
   },
   computed: {
     ...mapGetters({
-      products: 'allProducts'
+      products: 'categoryProducts'
     }),
     currentProducts () {
+      // eslint-disable-next-line
       return this.products.sort(this.sortStrategy(this.sortMode))
     }
   },
@@ -90,8 +91,10 @@ export default {
 <style lang="scss">
   .product-list {
     padding: 10rem;
+    float: right;
+    width: 85vw;
 
-    &__grid span{
+    &__grid > span{
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
